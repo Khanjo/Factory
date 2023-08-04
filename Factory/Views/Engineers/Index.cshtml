@@ -15,22 +15,10 @@
     @foreach (Engineer engineer in Model)
     {
         <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
-        @if (@Model.JoinEntities.Count == 0)
-        {
-            <p>This engineer hasn't been assigned to any machines.</p>
-        }
-        else
-        {
-            <ul>
-                @foreach (MachineEngineer join in Model.JoinEntities)
-                {
-                    <li>@join.Machine.Name</li>
-                }
-            </ul>
-        }
     }
 </ul>
 
 <div class="links">
+    <h2>@Html.ActionLink("Add New Engineer", "Create")</h2>
     <h2>@Html.ActionLink("Home", "Index", "Home")</h2>
 </div>
