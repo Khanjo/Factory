@@ -6,18 +6,21 @@
 
 <h1>Engineers:</h1>
 
-@if (@Model.Count == 0)
-{
-    <h3>No engineers have been added yet.</h3>
-}
-
-<ul>
-    @foreach (Engineer engineer in Model)
+<div id="stuff">
+    @if (@Model.Count == 0)
     {
-        <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+        <p>No engineers have been added yet.</p>
     }
-</ul>
 
+    <ul>
+        @foreach (Engineer engineer in Model)
+        {
+            <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+        }
+    </ul>
+</div>
+<br>
+<br>
 <div class="links">
     <h2>@Html.ActionLink("Add New Engineer", "Create")</h2>
     <h2>@Html.ActionLink("Home", "Index", "Home")</h2>

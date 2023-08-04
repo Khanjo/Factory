@@ -6,11 +6,14 @@
 
 <h2>Are you sure you want to delete @Html.DisplayFor(model => model.Name)</h2>
 
-@using (Html.BeginForm())
-{
-    <input type="submit" value="Delete" class="btn btn-primary" />
-}
-
+<div id="delete">
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete" class="btn btn-primary" />
+    }
+</div>
+<br>
+<br>
 <div class="links">
     <h2>@Html.ActionLink("Back to Engineers", "Index")</h2>
 </div>

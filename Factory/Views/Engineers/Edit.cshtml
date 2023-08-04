@@ -6,16 +6,22 @@
 
 <h2>Edit @Html.DisplayFor(model => model.Name)</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.EngineerId)
+<div id="stuff">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
-
-    <input type="submit" value="Save" class="btn btn-primary" />
-}
-
+        @Html.LabelFor(model => model.Name)
+        <br>
+        <br>
+        @Html.EditorFor(model => model.Name)
+        <br>
+        <br>
+        <input type="submit" value="Save" class="btn btn-primary" />
+    }
+</div>
+<br>
+<br>
 <div class="links">
     <h2>@Html.ActionLink("Back to Engineers", "Index")</h2>
 </div>
