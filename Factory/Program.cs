@@ -1,17 +1,17 @@
 using Microsoft.EntityFrameworkCore;
-using Project.Models;
+using Factory.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<ProjectContext>(dbContextOptions => dbContextOptions.UseMySql(builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"])));
+builder.Services.AddDbContext<FactoryContext>(dbContextOptions => dbContextOptions.UseMySql(builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"])));
 
 WebApplication app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles()
+app.UseStaticFiles();
 
 app.UseRouting();
 
